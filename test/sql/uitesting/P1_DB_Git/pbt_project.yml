@@ -1,6 +1,6 @@
 name: P1_DB_Git
 description: ''
-version: '1.0'
+version: '1.2'
 author: null
 language: sql
 buildSystem: ''
@@ -25,7 +25,6 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_1.sql
-    - .prophecy/ide/models/model_P1_DB_Git_1.json
     sqlDependencies:
       models: []
       datasets: []
@@ -37,7 +36,6 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_2.sql
-    - .prophecy/ide/models/model_P1_DB_Git_2.json
     sqlDependencies:
       models: []
       datasets: []
@@ -49,7 +47,6 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_3.sql
-    - .prophecy/ide/models/model_P1_DB_Git_3.json
     sqlDependencies:
       models: []
       datasets: []

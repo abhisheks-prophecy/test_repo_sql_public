@@ -1,3 +1,9 @@
+{{
+  config({    
+    "materialized": "view"
+  })
+}}
+
 {% set v_int_p1 = 10 %}
 
 WITH all_type_parquet AS (
@@ -21,7 +27,7 @@ Reformat_1 AS (
     c_boolean AS c_boolean,
     c_array AS c_array,
     c_struct AS c_struct,
-    concat({{ var('v_project_int_p1')}}, {{ P1_DB_Git.qa_concat_p1('c_string', v_int_p1) }}) AS c_macro
+    concat({{ var('v_project_int_p1')}}, {{ P1_DB_Git.qa_concat_p1('c_string', "'test random'") }}) AS c_macro
   
   FROM all_type_parquet AS in0
 

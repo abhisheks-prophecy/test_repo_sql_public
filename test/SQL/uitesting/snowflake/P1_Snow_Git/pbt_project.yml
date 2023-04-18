@@ -1,0 +1,110 @@
+name: P1_Snow_Git
+description: ''
+version: '1.0'
+author: null
+language: sql
+buildSystem: ''
+buildSystemDetails: null
+pipelines: {}
+datasets: {}
+templates: {}
+jobs: {}
+functions:
+  author: null
+  createdAt: '2023-04-13 02:49:47'
+  modifiedAt: '2023-04-13 02:49:47'
+  gems: {}
+  udfs: {}
+  udafs: {}
+  expressions: {}
+subgraphs: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/model_P1_Snow_Git_1:
+    name: model_P1_Snow_Git_1
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - models/model_P1_Snow_Git_1.sql
+    - .prophecy/ide/models/model_P1_Snow_Git_1.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-13 02:56:32'
+    modifiedAt: '2023-04-13 02:56:32'
+  .prophecy/metadata/sqlmodels/model_P1_Snow_Git_2:
+    name: model_P1_Snow_Git_2
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - models/model_P1_Snow_Git_2.sql
+    - .prophecy/ide/models/model_P1_Snow_Git_2.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-13 02:57:03'
+    modifiedAt: '2023-04-13 02:57:03'
+  .prophecy/metadata/sqlmodels/model_P1_Snow_Git_3:
+    name: model_P1_Snow_Git_3
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - models/model_P1_Snow_Git_3.sql
+    - .prophecy/ide/models/model_P1_Snow_Git_3.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-13 02:57:25'
+    modifiedAt: '2023-04-13 02:57:25'
+sqlMacros:
+  .prophecy/metadata/sqlmacros/qa_concat_snow_p1:
+    name: qa_concat_snow_p1
+    macroType: expression
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - macros/functions/qa_concat_snow_p1.sql
+    createdAt: '2023-04-13 02:52:08'
+    modifiedAt: '2023-04-13 02:52:08'
+  .prophecy/metadata/sqlmacros/qa_not_null_gem_snow_p1:
+    name: qa_not_null_gem_snow_p1
+    macroType: query
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - macros/gem/qa_not_null_gem_snow_p1.sql
+    createdAt: '2023-04-13 02:52:40'
+    modifiedAt: '2023-04-13 02:52:40'
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/raw_customers_snow_p1:
+    name: raw_customers_snow_p1
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - seeds/raw_customers_snow_p1.csv
+    createdAt: '2023-04-13 02:51:45'
+    modifiedAt: '2023-04-13 02:51:45'
+sqlSources:
+  .prophecy/metadata/sqlsources/QA_DATABASE_QA_SIMPLE_SCHEMA:
+    name: QA_DATABASE.QA_SIMPLE_SCHEMA
+    description: null
+    author: abhisheks+sql@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-13 02:53:31'
+    modifiedAt: '2023-04-13 02:53:31'
+    tables:
+    - name: ALL_TYPE_TABLE_SMALLER
+      description: null
+      author: abhisheks+sql@prophecy.io
+      createdAt: '2023-04-13 02:53:31'
+      modifiedAt: '2023-04-13 02:53:31'
+sqlUnreferencedSources: {}
+sqlPipeline:
+  name: sqlPipeline
+  description: null
+  author: abhisheks+sql@prophecy.io
+  createdAt: '2023-04-13 02:49:47'
+  modifiedAt: '2023-04-13 02:49:47'
+dependencies: '[]'
+projectDependencies: {}
+pipelineConfigurations: {}
