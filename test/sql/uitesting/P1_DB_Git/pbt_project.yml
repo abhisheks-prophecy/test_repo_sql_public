@@ -25,6 +25,7 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_1.sql
+    - .prophecy/ide/models/model_P1_DB_Git_1.json
     sqlDependencies:
       models: []
       datasets: []
@@ -36,6 +37,7 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_2.sql
+    - .prophecy/ide/models/model_P1_DB_Git_2.json
     sqlDependencies:
       models: []
       datasets: []
@@ -47,6 +49,7 @@ sqlModels:
     author: abhisheks+sql@prophecy.io
     files:
     - models/model_P1_DB_Git_3.sql
+    - .prophecy/ide/models/model_P1_DB_Git_3.json
     sqlDependencies:
       models: []
       datasets: []
@@ -70,6 +73,7 @@ sqlMacros:
     author: abhisheks+sql@prophecy.io
     files:
     - macros/gems/qa_not_null_gem_p1.sql
+    - .prophecy/ide/macros/qa_not_null_gem_p1.json
     createdAt: '2023-04-13 02:08:20'
     modifiedAt: '2023-04-13 02:08:20'
 sqlSeeds:

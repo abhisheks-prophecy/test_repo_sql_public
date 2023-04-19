@@ -1,0 +1,27 @@
+{
+  "macro_utSGswml" : {
+    "name" : "qa_not_null_gem_p1",
+    "macroId" : "macro_utSGswml",
+    "macroType" : "query",
+    "definition" : "\nselect * from {{model}} where {{col}} is not null",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "model",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "col",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

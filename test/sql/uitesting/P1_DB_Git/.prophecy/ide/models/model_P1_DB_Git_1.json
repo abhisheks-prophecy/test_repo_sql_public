@@ -1,0 +1,177 @@
+{
+  "id" : "model_P1_DB_Git_1",
+  "metainfo" : {
+    "label" : "model_P1_DB_Git_1",
+    "autoLayout" : true,
+    "staleState" : "none",
+    "sourceSuggestions" : {
+      "sources" : [ ]
+    },
+    "graphConfig" : {
+      "modelConfig" : {
+        "materialized" : "view"
+      },
+      "userDefinedConfig" : {
+        "vars" : {
+          "v_int_p1" : "10"
+        }
+      }
+    }
+  },
+  "processes" : {
+    "all_type_parquet##KzRgqSDq" : {
+      "id" : "all_type_parquet##KzRgqSDq",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_parquet",
+        "phase" : 0
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_parquet",
+          "sourceType" : "Source",
+          "sourceName" : "spark_catalog.qa_database"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "n8x7FIAa",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Reformat_1##oA6szeyi" : {
+      "id" : "Reformat_1##oA6szeyi",
+      "component" : "Reformat",
+      "metadata" : {
+        "label" : "Reformat_1",
+        "phase" : 0,
+        "macroDependencies" : [ "P1_DB_Git.qa_concat_p1" ]
+      },
+      "properties" : {
+        "columnsSelector" : [ ],
+        "expressions" : [ {
+          "expression" : {
+            "expression" : "c_tinyint"
+          },
+          "alias" : "c_tinyint"
+        }, {
+          "expression" : {
+            "expression" : "c_smallint"
+          },
+          "alias" : "c_smallint"
+        }, {
+          "expression" : {
+            "expression" : "c_int"
+          },
+          "alias" : "c_int"
+        }, {
+          "expression" : {
+            "expression" : "c_bigint"
+          },
+          "alias" : "c_bigint"
+        }, {
+          "expression" : {
+            "expression" : "c_float"
+          },
+          "alias" : "c_float"
+        }, {
+          "expression" : {
+            "expression" : "c_double"
+          },
+          "alias" : "c_double"
+        }, {
+          "expression" : {
+            "expression" : "c_string"
+          },
+          "alias" : "c_string"
+        }, {
+          "expression" : {
+            "expression" : "c_boolean"
+          },
+          "alias" : "c_boolean"
+        }, {
+          "expression" : {
+            "expression" : "c_array"
+          },
+          "alias" : "c_array"
+        }, {
+          "expression" : {
+            "expression" : "c_struct"
+          },
+          "alias" : "c_struct"
+        }, {
+          "expression" : {
+            "expression" : "concat({{ var('v_project_int_p1')}}, {{ P1_DB_Git.qa_concat_p1('c_string', \"'test random'\") }})"
+          },
+          "alias" : "c_macro"
+        } ]
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "kxRUK83P",
+          "schema" : {
+            "providerType" : "dummy",
+            "fields" : [ ]
+          },
+          "slug" : "in0"
+        } ],
+        "outputs" : [ {
+          "id" : "OZVc7jW8",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "model_P1_DB_Git_1##ROR62B1R" : {
+      "id" : "model_P1_DB_Git_1##ROR62B1R",
+      "component" : "TargetModel",
+      "metadata" : {
+        "label" : "model_P1_DB_Git_1",
+        "phase" : 0,
+        "macroDependencies" : [ ]
+      },
+      "properties" : {
+        "customQueryDisabled" : true,
+        "customQuery" : false,
+        "incrementalEditorDisabled" : true,
+        "query" : "SELECT * \n\nFROM Reformat_1\n",
+        "incrementalKey" : false,
+        "incremental" : {
+          "expression" : "true"
+        }
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rEWHGLVX",
+          "slug" : "Reformat_1"
+        } ],
+        "outputs" : [ {
+          "id" : "ravLYTF5",
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "pyfWkQdW",
+    "source" : "all_type_parquet##KzRgqSDq",
+    "sourcePort" : "n8x7FIAa",
+    "target" : "Reformat_1##oA6szeyi",
+    "targetPort" : "kxRUK83P"
+  }, {
+    "id" : "GmzEIZb5",
+    "source" : "Reformat_1##oA6szeyi",
+    "sourcePort" : "OZVc7jW8",
+    "target" : "model_P1_DB_Git_1##ROR62B1R",
+    "targetPort" : "rEWHGLVX"
+  } ],
+  "component" : "Model"
+}
