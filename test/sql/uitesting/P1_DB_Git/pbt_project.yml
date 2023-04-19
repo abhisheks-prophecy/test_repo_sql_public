@@ -1,6 +1,6 @@
 name: P1_DB_Git
 description: ''
-version: '1.2'
+version: 1.2.0
 author: null
 language: sql
 buildSystem: ''
