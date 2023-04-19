@@ -1,0 +1,111 @@
+{
+  "metainfo" : {
+    "type" : "Databricks",
+    "fabricId" : "5300",
+    "jobId" : "jobs/Job_P1_DB_Git_1",
+    "name" : "Job_P1_DB_Git_1",
+    "schedule" : "0 0 0 * * ? 2090",
+    "scheduleTimeZone" : "UTC",
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "enabled" : true,
+    "defaultClusterSize" : "small",
+    "alerting" : {
+      "emails" : "abhisheks@prophecy.io",
+      "onStart" : false,
+      "onSuccess" : true,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "type" : "Inherited",
+      "retries" : 0,
+      "alerting" : {
+        "emails" : "",
+        "onStart" : false,
+        "onSuccess" : false,
+        "onFailure" : false
+      }
+    },
+    "availableFabrics" : [ {
+      "id" : "5300",
+      "name" : "dev",
+      "clusterSizes" : {
+        "default" : "small",
+        "availableClusterSizes" : [ "small", "medium" ]
+      },
+      "pylibsResolutionMode" : {
+        "PublicCentral" : { }
+      },
+      "scalalibsResolutionMode" : {
+        "PublicCentral" : { }
+      }
+    } ]
+  },
+  "processes" : {
+    "Q5eKdB_Qs-oK4ODpBZo4K$$sLTuks54qmZCJTpnkZ1Wi" : {
+      "id" : "Q5eKdB_Qs-oK4ODpBZo4K$$sLTuks54qmZCJTpnkZ1Wi",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : 480,
+        "y" : 220
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "rdW8CWQPLwZ8eZJ8E1dCl$$UBYgPqmqTmw-QUTGRA4ed",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "CGoGYAA9Ax1kqnsUnv89j$$dgfezMVDx3aia40961vP6",
+          "slug" : ""
+        } ]
+      },
+      "settings" : {
+        "type" : "Inherited",
+        "alerting" : {
+          "emails" : "",
+          "onStart" : false,
+          "onSuccess" : false,
+          "onFailure" : false
+        }
+      },
+      "properties" : {
+        "execSeed" : true,
+        "runModelWithParents" : true,
+        "execRun" : true,
+        "gitEntity" : "branch",
+        "model" : "model_P1_DB_Git_2",
+        "projectId" : "22405",
+        "runOnlyModel" : "true",
+        "loadingModels" : false,
+        "fullRefresh" : true,
+        "profile" : "run_profile",
+        "sqlFabricId" : "5291",
+        "gitEntityValue" : "main",
+        "runModelWithChildren" : true,
+        "execDeps" : true,
+        "execTest" : false,
+        "currentProjectModels" : [ {
+          "label" : "model_P1_DB_Git_3",
+          "value" : "model_P1_DB_Git_3",
+          "id" : "22405/.prophecy/metadata/sqlmodels/model_P1_DB_Git_3",
+          "name" : "model_P1_DB_Git_3"
+        }, {
+          "label" : "model_P1_DB_Git_2",
+          "value" : "model_P1_DB_Git_2",
+          "id" : "22405/.prophecy/metadata/sqlmodels/model_P1_DB_Git_2",
+          "name" : "model_P1_DB_Git_2"
+        }, {
+          "label" : "model_P1_DB_Git_1",
+          "value" : "model_P1_DB_Git_1",
+          "id" : "22405/.prophecy/metadata/sqlmodels/model_P1_DB_Git_1",
+          "name" : "model_P1_DB_Git_1"
+        } ]
+      }
+    }
+  },
+  "connections" : [ ]
+}

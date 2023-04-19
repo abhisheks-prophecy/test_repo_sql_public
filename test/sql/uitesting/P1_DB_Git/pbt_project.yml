@@ -8,7 +8,31 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/Job_P1_DB_Git_1:
+    name: Job_P1_DB_Git_1
+    description: ''
+    fabricUID: 5300
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-04-19 15:41:42'
+    modifiedAt: '2023-04-19 15:42:11'
+    author: abhisheks+sql@prophecy.io
 functions:
   author: null
   createdAt: '2023-04-13 02:04:44'

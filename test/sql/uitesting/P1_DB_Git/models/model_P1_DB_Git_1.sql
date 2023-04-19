@@ -1,9 +1,3 @@
-{{
-  config({    
-    "materialized": "view"
-  })
-}}
-
 {% set v_int_p1 = 10 %}
 
 WITH all_type_parquet AS (
