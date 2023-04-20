@@ -1,6 +1,6 @@
 name: sql_test_databricks_2
 description: ''
-version: 0.0.1
+version: '1.0'
 author: null
 language: sql
 buildSystem: ''
