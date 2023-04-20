@@ -1,0 +1,143 @@
+{
+  "metainfo" : {
+    "type" : "Composer",
+    "fabricId" : "4315",
+    "jobId" : "jobs/SQL_TestJob_Airflow_1",
+    "name" : "SQL_TestJob_Airflow_1",
+    "dagName" : "test_abhisheks+e2etests_sql_test_databricks_2_SQL_TestJob_Airflow_1",
+    "schedule" : "0 0 * * *",
+    "enabled" : true,
+    "alerting" : {
+      "emails" : "",
+      "onStart" : false,
+      "onSuccess" : false,
+      "onFailure" : false
+    },
+    "maxConcurrentRuns" : 1,
+    "processDefaultSettings" : {
+      "ignore_first_depends_on_past" : true,
+      "do_xcom_push" : true
+    },
+    "jobClusterMode" : {
+      "clusterMode" : "Single"
+    },
+    "availableFabrics" : [ {
+      "id" : "4315",
+      "name" : "dev_airflow"
+    } ],
+    "catchup" : true
+  },
+  "processes" : {
+    "CV5RfGDsy1tFuCAISQu1s$$Lg-WIp_U6OhhIAnQLFYD1" : {
+      "id" : "CV5RfGDsy1tFuCAISQu1s$$Lg-WIp_U6OhhIAnQLFYD1",
+      "component" : "DBT",
+      "metadata" : {
+        "label" : "DBT_0",
+        "slug" : "DBT_0",
+        "x" : 380,
+        "y" : 220
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "4RhN3an_hiFUW9qzilBwz$$cysbsPpsI9shfJ_1gJM-l",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "W2gtDS2d9TSTJAwUd_Wgt$$V9sldgJm-zdd1uIb_xQeO",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "cacheSelectedOnly" : null,
+        "gitSubPath" : null,
+        "runModelWithParents" : false,
+        "defer" : null,
+        "noDefer" : null,
+        "runSeed" : false,
+        "gitEntity" : "branch",
+        "noPartialParse" : null,
+        "warnErrorOptions" : null,
+        "state" : null,
+        "useExperimentalParser" : null,
+        "gitSshUrl" : null,
+        "indirectSelection" : null,
+        "partialParse" : null,
+        "runRun" : true,
+        "vars" : null,
+        "noPrint" : null,
+        "quiet" : null,
+        "projectId" : "25060",
+        "runOnlyModel" : false,
+        "favorState" : null,
+        "failFast" : null,
+        "noStaticParser" : null,
+        "runTest" : true,
+        "select" : null,
+        "recordTimingInfo" : null,
+        "fullRefresh" : true,
+        "noCacheSelectedOnly" : null,
+        "noFavorState" : null,
+        "profile" : "run_profile",
+        "noVersionCheck" : null,
+        "noWriteJson" : false,
+        "printerWidth" : null,
+        "gitEntityValue" : "main",
+        "logFormat" : null,
+        "runModelWithChildren" : false,
+        "models" : null,
+        "target" : null,
+        "exclude" : null,
+        "runDeps" : false,
+        "noAnonymousUsageStats" : null,
+        "selector" : null,
+        "targetPath" : null,
+        "threads" : null,
+        "warnError" : null,
+        "currentProjectModels" : [ {
+          "label" : "env_test_model_1_jobstest",
+          "value" : "env_test_model_1_jobstest",
+          "id" : "25060/.prophecy/metadata/sqlmodels/env_test_model_1_jobstest",
+          "name" : "env_test_model_1_jobstest"
+        } ],
+        "profilesDir" : "/home/airflow/gcs/data",
+        "taskId" : null,
+        "logPath" : null,
+        "storeFailures" : null
+      }
+    },
+    "D_xYOmo9on7PlnTGp7tzi$$obG-gFEycu2JbQad4Yc8-" : {
+      "id" : "D_xYOmo9on7PlnTGp7tzi$$obG-gFEycu2JbQad4Yc8-",
+      "component" : "Script",
+      "metadata" : {
+        "label" : "Script_1",
+        "slug" : "Script_1",
+        "x" : 560,
+        "y" : 260
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "1VmpBw5PWbXDI-ytuo7vY$$OwxO211-1bn95QmkoGlyk",
+          "slug" : ""
+        } ],
+        "outputs" : [ {
+          "id" : "4AdR9KOOeV410ffXXOAXK$$V3PtQWsg6a1lnxFXoLQbl",
+          "slug" : ""
+        } ]
+      },
+      "settings" : { },
+      "properties" : {
+        "code" : "print(\"hello\")",
+        "language" : "python",
+        "taskId" : null
+      }
+    }
+  },
+  "connections" : [ {
+    "id" : "R44f1qWOaJ5xRSDEqbBtB$$k6GlXDnMAMnC7W2CQdB5w",
+    "source" : "CV5RfGDsy1tFuCAISQu1s$$Lg-WIp_U6OhhIAnQLFYD1",
+    "target" : "D_xYOmo9on7PlnTGp7tzi$$obG-gFEycu2JbQad4Yc8-",
+    "sourcePort" : "W2gtDS2d9TSTJAwUd_Wgt$$V9sldgJm-zdd1uIb_xQeO",
+    "targetPort" : "1VmpBw5PWbXDI-ytuo7vY$$OwxO211-1bn95QmkoGlyk"
+  } ]
+}

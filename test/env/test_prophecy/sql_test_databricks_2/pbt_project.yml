@@ -8,7 +8,79 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs: {}
+jobs:
+  jobs/SQL_TestJob_DB_1:
+    name: SQL_TestJob_DB_1
+    description: ''
+    fabricUID: 2790
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: abhisheks@prophecy.io
+      onStart: false
+      onSuccess: true
+      onFailure: true
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-04-20 16:12:46'
+    modifiedAt: '2023-04-20 16:20:02'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/SQL_TestJob_Airflow_1:
+    name: SQL_TestJob_Airflow_1
+    description: airflow job
+    fabricUID: 4315
+    scheduler:
+      Composer: {}
+    cloudProvider: null
+    jobSize: null
+    scheduleCron: 0 0 * * *
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: true
+    createdAt: '2023-04-20 16:16:27'
+    modifiedAt: '2023-04-20 16:17:43'
+    author: abhisheks+e2etests@prophecy.io
+  jobs/SQL_TestJobDB_2_Disabled:
+    name: SQL_TestJobDB_2_Disabled
+    description: ''
+    fabricUID: 2790
+    scheduler:
+      Databricks: {}
+    cloudProvider: null
+    jobSize: small
+    scheduleCron: 0 0 0 * * ? 2090
+    timeout: null
+    alerting:
+      emails: ''
+      onStart: false
+      onSuccess: false
+      onFailure: false
+    pipelines: []
+    jobClusterMode:
+      clusterMode:
+        Single: {}
+      clusterId: null
+    enabled: null
+    createdAt: '2023-04-20 16:18:25'
+    modifiedAt: '2023-04-20 16:18:40'
+    author: abhisheks+e2etests@prophecy.io
 functions:
   author: null
   createdAt: '2023-04-20 15:28:31'
@@ -18,10 +90,44 @@ functions:
   udafs: {}
   expressions: {}
 subgraphs: {}
-sqlModels: {}
+sqlModels:
+  .prophecy/metadata/sqlmodels/env_test_model_1_jobstest:
+    name: env_test_model_1_jobstest
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - models/env_test_model_1_jobstest.sql
+    - .prophecy/ide/models/env_test_model_1_jobstest.json
+    sqlDependencies:
+      models: []
+      datasets: []
+    createdAt: '2023-04-20 15:29:17'
+    modifiedAt: '2023-04-20 15:29:17'
 sqlMacros: {}
-sqlSeeds: {}
-sqlSources: {}
+sqlSeeds:
+  .prophecy/metadata/sqlseeds/service_classif:
+    name: service_classif
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - seeds/service_classif.csv
+    createdAt: '2023-04-20 15:30:15'
+    modifiedAt: '2023-04-20 15:30:15'
+sqlSources:
+  .prophecy/metadata/sqlsources/spark_catalog_qa_database:
+    name: spark_catalog.qa_database
+    description: null
+    author: abhisheks+e2etests@prophecy.io
+    files:
+    - prophecy-sources/sources.yml
+    createdAt: '2023-04-20 16:01:59'
+    modifiedAt: '2023-04-20 16:01:59'
+    tables:
+    - name: all_type_non_partitioned
+      description: null
+      author: abhisheks+e2etests@prophecy.io
+      createdAt: '2023-04-20 16:01:59'
+      modifiedAt: '2023-04-20 16:01:59'
 sqlUnreferencedSources: {}
 sqlPipeline:
   name: sqlPipeline
