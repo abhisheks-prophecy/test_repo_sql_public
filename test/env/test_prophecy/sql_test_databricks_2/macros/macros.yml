@@ -1,0 +1,9 @@
+---
+version: 2
+macros:
+- name: "test"
+  arguments:
+  - name: "table"
+    type: "table"
+    description: "{\"ProphecyType\": \"table\"}"
+  macroType: "query"

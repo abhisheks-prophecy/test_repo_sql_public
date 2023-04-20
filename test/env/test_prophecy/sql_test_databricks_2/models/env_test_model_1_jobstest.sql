@@ -32,6 +32,12 @@ Join_1 AS (
   INNER JOIN all_type_non_partitioned AS in1
      ON in0.code_1 != in1.c_string
 
+),
+
+test_1 AS (
+
+  {{ sql_test_databricks_2.test() }}
+
 )
 
 SELECT *
