@@ -679,7 +679,7 @@
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
-        "x" : 320,
+        "x" : 340,
         "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
