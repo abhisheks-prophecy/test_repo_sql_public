@@ -1,0 +1,332 @@
+{
+  "macro_GEqatOGT" : {
+    "name" : "postgres__language_specific_deduplicate",
+    "macroId" : "macro_GEqatOGT",
+    "macroType" : "query",
+    "definition" : "\n\n    select\n        distinct on ({{ partition_by }}) *\n    from {{ relation }}\n    order by {{ partition_by }}{{ ',' ~ order_by }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "table",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "value",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "value",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "gems",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"bigquery__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"partition_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"default__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"partition_by\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"value\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"postgres__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"partition_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "SQL_SnoflakeMainProject/macros/gems/gems.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "bigquery__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "partition_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "default__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "partition_by",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "value",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "postgres__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "partition_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null
+    }
+  },
+  "macro_cxzDxJF3" : {
+    "name" : "bigquery__language_specific_deduplicate",
+    "macroId" : "macro_cxzDxJF3",
+    "macroType" : "query",
+    "definition" : "\n\n    select unique.*\n    from (\n        select\n            array_agg (\n                original\n                order by {{ order_by }}\n                limit 1\n            )[offset(0)] unique\n        from {{ relation }} original\n        group by {{ partition_by }}\n    )",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "table"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "gems",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"bigquery__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n  - name: \"partition_by\"\n    type: \"unknown\"\n  - name: \"order_by\"\n    type: \"unknown\"\n  macroType: \"query\"\n",
+      "path" : "SQL_SnoflakeMainProject/macros/gems/gems.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "bigquery__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table"
+          }, {
+            "name" : "partition_by",
+            "type" : "unknown"
+          }, {
+            "name" : "order_by",
+            "type" : "unknown"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null
+    }
+  },
+  "macro_FD6OKKbC" : {
+    "name" : "default__language_specific_deduplicate",
+    "macroId" : "macro_FD6OKKbC",
+    "macroType" : "query",
+    "definition" : "\n\n    with row_numbered as (\n        select\n            _inner.*,\n            row_number() over (\n                partition by {{ partition_by }}\n                order by {{ order_by }}\n            ) as rn\n        from {{ relation }} as _inner\n    )\n\n    select\n        distinct data.*\n    from {{ relation }} as data\n    \n    natural join row_numbered\n    where row_numbered.rn = 1",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "table",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "value",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "value",
+          "value" : ""
+        },
+        "optional" : false,
+        "comment" : "",
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none",
+    "propertiesFile" : {
+      "name" : "gems",
+      "content" : "---\nversion: 2\nmacros:\n- name: \"bigquery__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"partition_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n- name: \"default__language_specific_deduplicate\"\n  arguments:\n  - name: \"relation\"\n    type: \"table\"\n    description: \"{\\\"ProphecyType\\\": \\\"table\\\"}\"\n  - name: \"partition_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  - name: \"order_by\"\n    type: \"unknown\"\n    description: \"{\\\"ProphecyType\\\": \\\"value\\\"}\"\n  macroType: \"query\"\n",
+      "path" : "SQL_SnoflakeMainProject/macros/gems/gems.yml",
+      "projectConfiguration" : null,
+      "folderConfiguration" : {
+        "version" : 2,
+        "macros" : [ {
+          "name" : "bigquery__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "partition_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        }, {
+          "name" : "default__language_specific_deduplicate",
+          "arguments" : [ {
+            "name" : "relation",
+            "type" : "table",
+            "description" : "{\"ProphecyType\": \"table\"}"
+          }, {
+            "name" : "partition_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          }, {
+            "name" : "order_by",
+            "type" : "unknown",
+            "description" : "{\"ProphecyType\": \"value\"}"
+          } ],
+          "macroType" : "query"
+        } ]
+      },
+      "packagesYml" : null
+    }
+  },
+  "macro_yiuT9Mm1" : {
+    "name" : "redshift__language_specific_deduplicate",
+    "macroId" : "macro_yiuT9Mm1",
+    "macroType" : "expression",
+    "definition" : "{{ return(dbt_utils.default__language_specific_deduplicate(relation, partition_by, order_by = order_by)) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "macro_DdGpHBkJ" : {
+    "name" : "snowflake__language_specific_deduplicate",
+    "macroId" : "macro_DdGpHBkJ",
+    "macroType" : "query",
+    "definition" : "\n\n    select *\n    from {{ relation }}\n    qualify\n        row_number() over (\n            partition by {{ partition_by }}\n            order by {{ order_by }}\n        ) = 1",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  },
+  "macro_mpf2lzfJ" : {
+    "name" : "language_specific_deduplicate",
+    "macroId" : "macro_mpf2lzfJ",
+    "macroType" : "expression",
+    "definition" : "{{ return(adapter.dispatch('language_specific_deduplicate', 'SQL_SnoflakeMainProject')(relation, partition_by, order_by)) }}",
+    "parameters" : {
+      "type" : "record",
+      "fields" : [ {
+        "name" : "relation",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "partition_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      }, {
+        "name" : "order_by",
+        "kind" : {
+          "type" : "unknown"
+        },
+        "optional" : false,
+        "isWorkflowNodeConfiguration" : false
+      } ]
+    },
+    "staleState" : "none"
+  }
+}

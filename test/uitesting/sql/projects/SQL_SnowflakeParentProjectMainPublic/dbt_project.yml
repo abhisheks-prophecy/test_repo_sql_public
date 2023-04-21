@@ -1,0 +1,41 @@
+# ==================
+# Project Details
+# ==================
+name: "SQL_SnoflakeMainProject"
+config-version: 2
+require-dbt-version:
+- ">=1.0.0"
+- "<2.0.0"
+version: "0.1"
+profile: "prophecy-default"
+
+# ==================
+# File Path Configs
+# ==================
+clean-targets:
+- "target"
+- "dbt_modules"
+- "logs"
+seed-paths:
+- "seeds"
+model-paths:
+- "models"
+- "prophecy-sources"
+macro-paths:
+- "macros"
+target-path: "target"
+
+# ==================
+# Variable Configs
+# ==================
+vars:
+  v_project_bool_parent: "True"
+  v_project_expression_parent: "'concat(c_string, c_text, c_varchar)'"
+  v_project_int_parent: "12"
+  v_project_dict_parent: "{ 'a' : 2, 'b' : 10, 'c' : [1, 2, 'hello'] }"
+  v_project_list_parent: "[1, 2, 'hello']"
+
+# ============
+# Misc
+# ============
+dispatch: []
