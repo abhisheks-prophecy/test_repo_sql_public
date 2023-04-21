@@ -1,0 +1,145 @@
+---
+version: 2
+sources:
+- name: "alias_prophecy_qa_qa_test_dataset"
+  database: "prophecy-qa"
+  schema: "qa_test_dataset"
+  config:
+    enabled: true
+  tables:
+  - name: "all_type_table"
+    columns:
+    - name: "c_int64"
+      dataType:
+        type: "Integer"
+    - name: "c_bignumeric"
+      dataType:
+        type: "BigNumeric"
+    - name: "c_bool"
+      dataType:
+        type: "Boolean"
+    - name: "c_bytes"
+      dataType:
+        type: "Bytes"
+    - name: "c_string"
+      dataType:
+        type: "String"
+    - name: "c_float64"
+      dataType:
+        type: "Float"
+    - name: "c_numeric_1"
+      dataType:
+        type: "Numeric"
+    - name: "c_numeric_2"
+      dataType:
+        type: "Numeric"
+    - name: "c_date"
+      dataType:
+        type: "Date"
+    - name: "c_interval"
+      dataType:
+        type: "Interval"
+    - name: "c_time"
+      dataType:
+        type: "Time"
+    - name: "c_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "c_datetime"
+      dataType:
+        type: "Date"
+    - name: "c_geography"
+      dataType:
+        type: "Geography"
+    - name: "c_json"
+      dataType:
+        type: "Json"
+    - name: "c_array_int64"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "Integer"
+    - name: "c_struct"
+      dataType:
+        type: "Record"
+        fields:
+        - name: "name"
+          dataType:
+            type: "String"
+        - name: "age"
+          dataType:
+            type: "Integer"
+        - name: "department"
+          dataType:
+            type: "String"
+    - name: "p_date"
+      dataType:
+        type: "Date"
+  - name: "qa_table_with_complex_column_names_and_table_with_long_name_1_table_with_complex_column_names_and_table_with_long_name_table_with_complex_column_names_and_table_with_long_name"
+    columns:
+    - name: "c_int64"
+      dataType:
+        type: "Integer"
+    - name: "_c_bignumeric"
+      dataType:
+        type: "BigNumeric"
+    - name: "_c_bool123"
+      dataType:
+        type: "Boolean"
+    - name: "c_bytes"
+      dataType:
+        type: "Bytes"
+    - name: "c_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little_buddy_string_with_a_very_long_name_little123"
+      dataType:
+        type: "String"
+    - name: "c_float64"
+      dataType:
+        type: "Float"
+    - name: "_c_numeric_1"
+      dataType:
+        type: "Numeric"
+    - name: "_c_numeric_2"
+      dataType:
+        type: "Numeric"
+    - name: "c_date"
+      dataType:
+        type: "Date"
+    - name: "c_interval"
+      dataType:
+        type: "Interval"
+    - name: "c_time"
+      dataType:
+        type: "Time"
+    - name: "c_timestamp"
+      dataType:
+        type: "Timestamp"
+    - name: "c_datetime"
+      dataType:
+        type: "Date"
+    - name: "c_geography"
+      dataType:
+        type: "Geography"
+    - name: "_c_json"
+      dataType:
+        type: "Json"
+    - name: "_c_array_int64"
+      dataType:
+        type: "Array"
+        dataType:
+          type: "Integer"
+    - name: "_c_struct1"
+      dataType:
+        type: "Record"
+        fields:
+        - name: "_name1"
+          dataType:
+            type: "String"
+        - name: "_age2"
+          dataType:
+            type: "Integer"
+        - name: "_department3"
+          dataType:
+            type: "String"
+    - name: "p_date"
+      dataType:
+        type: "Date"
