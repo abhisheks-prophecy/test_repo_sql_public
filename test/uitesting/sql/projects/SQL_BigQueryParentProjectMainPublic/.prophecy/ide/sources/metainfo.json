@@ -1,0 +1,20 @@
+{
+  "name" : "SQL_BigQueryParentProjectMain",
+  "fileSystem" : {
+    "type" : "Folder",
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "providerType" : "bigquery",
+  "fabricId" : "5285",
+  "prophecyIDEFolder" : {
+    "name" : "",
+    "children" : { },
+    "path" : "",
+    "editable" : true
+  },
+  "dependenciesContainer" : { },
+  "frontEndLanguage" : "sql"
+}
