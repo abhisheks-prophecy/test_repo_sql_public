@@ -1546,7 +1546,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "ALL_TYPE_TABLE_SMALLER",
-        "x" : 120,
+        "x" : 60,
         "y" : 120,
         "phase" : 0
       },
