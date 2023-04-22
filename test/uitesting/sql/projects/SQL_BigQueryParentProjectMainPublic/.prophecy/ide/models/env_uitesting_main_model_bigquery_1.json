@@ -2,7 +2,7 @@
   "id" : "env_uitesting_main_model_bigquery_1",
   "metainfo" : {
     "label" : "env_uitesting_main_model_bigquery_1",
-    "autoLayout" : false,
+    "autoLayout" : true,
     "staleState" : "none",
     "sourceSuggestions" : {
       "sources" : [ ]
@@ -14,13 +14,195 @@
     }
   },
   "processes" : {
-    "Reformat_1##au96OmSf" : {
-      "id" : "Reformat_1##au96OmSf",
+    "raw_payments##KaGSSCZW" : {
+      "id" : "raw_payments##KaGSSCZW",
+      "component" : "Seed",
+      "metadata" : {
+        "label" : "raw_payments",
+        "phase" : 0,
+        "comment" : "kiran comment conflict"
+      },
+      "properties" : {
+        "table" : {
+          "name" : "raw_payments",
+          "sourceType" : "Seed"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "ER6VkkMP",
+          "schema" : {
+            "providerType" : "BigQuery",
+            "fields" : [ {
+              "name" : "id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "order_id",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "payment_method",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "amount",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "all_type_table##gUquQNHU" : {
+      "id" : "all_type_table##gUquQNHU",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "all_type_table",
+        "phase" : 0,
+        "comment" : "kiran comment conflict"
+      },
+      "properties" : {
+        "table" : {
+          "name" : "all_type_table",
+          "sourceType" : "Source",
+          "sourceName" : "alias_prophecy_qa_qa_test_dataset"
+        }
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "AaeeeGx6",
+          "schema" : {
+            "providerType" : "bigquery",
+            "fields" : [ {
+              "name" : "c_int64",
+              "dataType" : {
+                "type" : "Integer"
+              }
+            }, {
+              "name" : "c_bignumeric",
+              "dataType" : {
+                "type" : "BigNumeric"
+              }
+            }, {
+              "name" : "c_bool",
+              "dataType" : {
+                "type" : "Boolean"
+              }
+            }, {
+              "name" : "c_bytes",
+              "dataType" : {
+                "type" : "Bytes"
+              }
+            }, {
+              "name" : "c_string",
+              "dataType" : {
+                "type" : "String"
+              }
+            }, {
+              "name" : "c_float64",
+              "dataType" : {
+                "type" : "Float"
+              }
+            }, {
+              "name" : "c_numeric_1",
+              "dataType" : {
+                "type" : "Numeric"
+              }
+            }, {
+              "name" : "c_numeric_2",
+              "dataType" : {
+                "type" : "Numeric"
+              }
+            }, {
+              "name" : "c_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_interval",
+              "dataType" : {
+                "type" : "Interval"
+              }
+            }, {
+              "name" : "c_time",
+              "dataType" : {
+                "type" : "Time"
+              }
+            }, {
+              "name" : "c_timestamp",
+              "dataType" : {
+                "type" : "Timestamp"
+              }
+            }, {
+              "name" : "c_datetime",
+              "dataType" : {
+                "type" : "Date"
+              }
+            }, {
+              "name" : "c_geography",
+              "dataType" : {
+                "type" : "Geography"
+              }
+            }, {
+              "name" : "c_json",
+              "dataType" : {
+                "type" : "Json"
+              }
+            }, {
+              "name" : "c_array_int64",
+              "dataType" : {
+                "type" : "Array",
+                "dataType" : {
+                  "type" : "Integer"
+                }
+              }
+            }, {
+              "name" : "c_struct",
+              "dataType" : {
+                "type" : "Record",
+                "fields" : [ {
+                  "name" : "name",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                }, {
+                  "name" : "age",
+                  "dataType" : {
+                    "type" : "Integer"
+                  }
+                }, {
+                  "name" : "department",
+                  "dataType" : {
+                    "type" : "String"
+                  }
+                } ]
+              }
+            }, {
+              "name" : "p_date",
+              "dataType" : {
+                "type" : "Date"
+              }
+            } ]
+          },
+          "slug" : "out"
+        } ],
+        "isCustomOutputSchema" : false
+      }
+    },
+    "Reformat_1##KLozjOnP" : {
+      "id" : "Reformat_1##KLozjOnP",
       "component" : "Reformat",
       "metadata" : {
         "label" : "Reformat_1",
-        "x" : 520,
-        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ "SQL_BaseGitDepProjectAllFinal.qa_concat_macro_base_column", "SQL_BigQueryParentProjectMain.qa_boolean_macro" ]
       },
@@ -135,7 +317,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "I7Pmy7Rd",
+          "id" : "VW40pJCB",
           "schema" : {
             "providerType" : "BigQuery",
             "fields" : [ {
@@ -252,7 +434,7 @@
           "slug" : "in0"
         } ],
         "outputs" : [ {
-          "id" : "rl3MEalC",
+          "id" : "Tm7lXrwe",
           "schema" : {
             "providerType" : "BigQuery",
             "fields" : [ {
@@ -386,13 +568,11 @@
         "isCustomOutputSchema" : false
       }
     },
-    "env_uitesting_main_model_bigquery_1##tnwJypQc" : {
-      "id" : "env_uitesting_main_model_bigquery_1##tnwJypQc",
+    "env_uitesting_main_model_bigquery_1##s9z4jKiB" : {
+      "id" : "env_uitesting_main_model_bigquery_1##s9z4jKiB",
       "component" : "TargetModel",
       "metadata" : {
         "label" : "env_uitesting_main_model_bigquery_1",
-        "x" : 720,
-        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -408,7 +588,7 @@
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "kMUamLPt",
+          "id" : "qvx6IOjZ",
           "schema" : {
             "providerType" : "BigQuery",
             "fields" : [ {
@@ -540,7 +720,7 @@
           "slug" : "Reformat_1"
         } ],
         "outputs" : [ {
-          "id" : "vK4yOb5E",
+          "id" : "U7zvOq7b",
           "schema" : {
             "providerType" : "BigQuery",
             "fields" : [ {
@@ -674,13 +854,11 @@
         "isCustomOutputSchema" : false
       }
     },
-    "Join_1##SuMy4LKe" : {
-      "id" : "Join_1##SuMy4LKe",
+    "Join_1##mtY3GgEU" : {
+      "id" : "Join_1##mtY3GgEU",
       "component" : "Join",
       "metadata" : {
         "label" : "Join_1",
-        "x" : 340,
-        "y" : 220,
         "phase" : 0,
         "macroDependencies" : [ ]
       },
@@ -784,12 +962,12 @@
           "alias" : "p_date"
         } ],
         "activeTab" : "conditions",
-        "columnsSelector" : [ "LHwdkM8l##c_int64", "Jp2ejdS9##id", "LHwdkM8l##c_int64", "LHwdkM8l##c_bignumeric", "LHwdkM8l##c_bool", "LHwdkM8l##c_bytes", "LHwdkM8l##c_string", "LHwdkM8l##c_float64", "LHwdkM8l##c_numeric_1", "LHwdkM8l##c_numeric_2", "LHwdkM8l##c_date", "LHwdkM8l##c_interval", "LHwdkM8l##c_time", "LHwdkM8l##c_timestamp", "LHwdkM8l##c_datetime", "LHwdkM8l##c_geography", "LHwdkM8l##c_json", "LHwdkM8l##c_array_int64", "LHwdkM8l##c_struct", "LHwdkM8l##p_date" ],
+        "columnsSelector" : [ "bxahXq3i##c_int64", "f7b9Nz2E##id", "bxahXq3i##c_int64", "bxahXq3i##c_bignumeric", "bxahXq3i##c_bool", "bxahXq3i##c_bytes", "bxahXq3i##c_string", "bxahXq3i##c_float64", "bxahXq3i##c_numeric_1", "bxahXq3i##c_numeric_2", "bxahXq3i##c_date", "bxahXq3i##c_interval", "bxahXq3i##c_time", "bxahXq3i##c_timestamp", "bxahXq3i##c_datetime", "bxahXq3i##c_geography", "bxahXq3i##c_json", "bxahXq3i##c_array_int64", "bxahXq3i##c_struct", "bxahXq3i##p_date" ],
         "headAlias" : "in0"
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "LHwdkM8l",
+          "id" : "bxahXq3i",
           "schema" : {
             "providerType" : "bigquery",
             "fields" : [ {
@@ -905,7 +1083,7 @@
           },
           "slug" : "in0"
         }, {
-          "id" : "Jp2ejdS9",
+          "id" : "f7b9Nz2E",
           "schema" : {
             "providerType" : "BigQuery",
             "fields" : [ {
@@ -933,195 +1111,9 @@
           "slug" : "in1"
         } ],
         "outputs" : [ {
-          "id" : "s06bTzpz",
+          "id" : "MkxpRXOr",
           "schema" : {
             "providerType" : "BigQuery",
-            "fields" : [ {
-              "name" : "c_int64",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "c_bignumeric",
-              "dataType" : {
-                "type" : "BigNumeric"
-              }
-            }, {
-              "name" : "c_bool",
-              "dataType" : {
-                "type" : "Boolean"
-              }
-            }, {
-              "name" : "c_bytes",
-              "dataType" : {
-                "type" : "Bytes"
-              }
-            }, {
-              "name" : "c_string",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "c_float64",
-              "dataType" : {
-                "type" : "Float"
-              }
-            }, {
-              "name" : "c_numeric_1",
-              "dataType" : {
-                "type" : "Numeric"
-              }
-            }, {
-              "name" : "c_numeric_2",
-              "dataType" : {
-                "type" : "Numeric"
-              }
-            }, {
-              "name" : "c_date",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "c_interval",
-              "dataType" : {
-                "type" : "Interval"
-              }
-            }, {
-              "name" : "c_time",
-              "dataType" : {
-                "type" : "Time"
-              }
-            }, {
-              "name" : "c_timestamp",
-              "dataType" : {
-                "type" : "Timestamp"
-              }
-            }, {
-              "name" : "c_datetime",
-              "dataType" : {
-                "type" : "Date"
-              }
-            }, {
-              "name" : "c_geography",
-              "dataType" : {
-                "type" : "Geography"
-              }
-            }, {
-              "name" : "c_json",
-              "dataType" : {
-                "type" : "Json"
-              }
-            }, {
-              "name" : "c_array_int64",
-              "dataType" : {
-                "type" : "Array",
-                "dataType" : {
-                  "type" : "Integer"
-                }
-              }
-            }, {
-              "name" : "c_struct",
-              "dataType" : {
-                "type" : "Record",
-                "fields" : [ {
-                  "name" : "name",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                }, {
-                  "name" : "age",
-                  "dataType" : {
-                    "type" : "Integer"
-                  }
-                }, {
-                  "name" : "department",
-                  "dataType" : {
-                    "type" : "String"
-                  }
-                } ]
-              }
-            }, {
-              "name" : "p_date",
-              "dataType" : {
-                "type" : "Date"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "raw_payments##Y1YOfdyY" : {
-      "id" : "raw_payments##Y1YOfdyY",
-      "component" : "Seed",
-      "metadata" : {
-        "label" : "raw_payments",
-        "x" : 120,
-        "y" : 320,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "raw_payments",
-          "sourceType" : "Seed"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "s010Utey",
-          "schema" : {
-            "providerType" : "BigQuery",
-            "fields" : [ {
-              "name" : "id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "order_id",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            }, {
-              "name" : "payment_method",
-              "dataType" : {
-                "type" : "String"
-              }
-            }, {
-              "name" : "amount",
-              "dataType" : {
-                "type" : "Integer"
-              }
-            } ]
-          },
-          "slug" : "out"
-        } ],
-        "isCustomOutputSchema" : false
-      }
-    },
-    "all_type_table##wv9SjXgv" : {
-      "id" : "all_type_table##wv9SjXgv",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "all_type_table",
-        "x" : 120,
-        "y" : 120,
-        "phase" : 0
-      },
-      "properties" : {
-        "table" : {
-          "name" : "all_type_table",
-          "sourceType" : "Source",
-          "sourceName" : "alias_prophecy_qa_qa_test_dataset"
-        }
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "deab5i6w",
-          "schema" : {
-            "providerType" : "bigquery",
             "fields" : [ {
               "name" : "c_int64",
               "dataType" : {
@@ -1240,29 +1232,29 @@
     }
   },
   "connections" : [ {
-    "id" : "m7ZJs3ey",
-    "source" : "all_type_table##wv9SjXgv",
-    "sourcePort" : "deab5i6w",
-    "target" : "Join_1##SuMy4LKe",
-    "targetPort" : "LHwdkM8l"
+    "id" : "lNZRsVNf",
+    "source" : "all_type_table##gUquQNHU",
+    "sourcePort" : "AaeeeGx6",
+    "target" : "Join_1##mtY3GgEU",
+    "targetPort" : "bxahXq3i"
   }, {
-    "id" : "xehLbRG7",
-    "source" : "raw_payments##Y1YOfdyY",
-    "sourcePort" : "s010Utey",
-    "target" : "Join_1##SuMy4LKe",
-    "targetPort" : "Jp2ejdS9"
+    "id" : "rX0cmE2g",
+    "source" : "raw_payments##KaGSSCZW",
+    "sourcePort" : "ER6VkkMP",
+    "target" : "Join_1##mtY3GgEU",
+    "targetPort" : "f7b9Nz2E"
   }, {
-    "id" : "BVrxcy8t",
-    "source" : "Join_1##SuMy4LKe",
-    "sourcePort" : "s06bTzpz",
-    "target" : "Reformat_1##au96OmSf",
-    "targetPort" : "I7Pmy7Rd"
+    "id" : "nzobkM2a",
+    "source" : "Join_1##mtY3GgEU",
+    "sourcePort" : "MkxpRXOr",
+    "target" : "Reformat_1##KLozjOnP",
+    "targetPort" : "VW40pJCB"
   }, {
-    "id" : "gaIRv2tD",
-    "source" : "Reformat_1##au96OmSf",
-    "sourcePort" : "rl3MEalC",
-    "target" : "env_uitesting_main_model_bigquery_1##tnwJypQc",
-    "targetPort" : "kMUamLPt"
+    "id" : "YT6iry5x",
+    "source" : "Reformat_1##KLozjOnP",
+    "sourcePort" : "Tm7lXrwe",
+    "target" : "env_uitesting_main_model_bigquery_1##s9z4jKiB",
+    "targetPort" : "qvx6IOjZ"
   } ],
   "component" : "Model"
 }

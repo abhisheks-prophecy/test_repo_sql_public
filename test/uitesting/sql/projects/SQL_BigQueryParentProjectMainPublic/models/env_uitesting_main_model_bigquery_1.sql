@@ -1,5 +1,6 @@
 WITH all_type_table AS (
 
+  {#kiran comment conflict#}
   SELECT * 
   
   FROM {{ source('alias_prophecy_qa_qa_test_dataset', 'all_type_table') }}
@@ -8,6 +9,7 @@ WITH all_type_table AS (
 
 raw_payments AS (
 
+  {#kiran comment conflict#}
   SELECT * 
   
   FROM {{ ref('raw_payments')}}
