@@ -1,6 +1,6 @@
 name: SQL_DatabricksParentProjectMain
 description: ''
-version: 3.0.0-5
+version: 3.0.0-1
 author: abhisheks+e2etests@prophecy.io
 language: sql
 buildSystem: ''
@@ -8,31 +8,7 @@ buildSystemDetails: null
 pipelines: {}
 datasets: {}
 templates: {}
-jobs:
-  jobs/Job_SQL_DatabricksParentProjectMain:
-    name: Job_SQL_DatabricksParentProjectMain
-    description: SQL Databricks job
-    fabricUID: 2730
-    scheduler:
-      Databricks: {}
-    cloudProvider: null
-    jobSize: small
-    scheduleCron: 0 0 0 * * ? 2090
-    timeout: null
-    alerting:
-      emails: abhisheks@prophecy.io
-      onStart: false
-      onSuccess: true
-      onFailure: false
-    pipelines: []
-    jobClusterMode:
-      clusterMode:
-        Single: {}
-      clusterId: null
-    enabled: false
-    createdAt: '2023-04-19 08:19:44'
-    modifiedAt: '2023-04-21 10:15:41'
-    author: abhisheks+e2etests@prophecy.io
+jobs: {}
 functions:
   author: null
   createdAt: '2023-04-15 08:21:42'
