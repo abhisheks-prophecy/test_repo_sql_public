@@ -37,8 +37,16 @@ Join_1 AS (
   INNER JOIN all_type_partitioned
      ON all_type_non_partitioned.c_tinyint = all_type_partitioned.c_tinyint and all_type_non_partitioned.c_smallint = all_type_partitioned.c_smallint
 
+),
+
+Reformat_1 AS (
+
+  SELECT * 
+  
+  FROM Join_1 AS in0
+
 )
 
 SELECT *
 
-FROM Join_1
+FROM Reformat_1
