@@ -614,7 +614,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_partitioned",
-        "x" : 120,
+        "x" : 100,
         "y" : 320,
         "phase" : 0
       },
@@ -722,7 +722,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_non_partitioned",
-        "x" : 120,
+        "x" : 100,
         "y" : 120,
         "phase" : 0
       },
