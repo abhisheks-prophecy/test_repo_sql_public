@@ -19,7 +19,7 @@
       "component" : "Source",
       "metadata" : {
         "label" : "all_type_table",
-        "x" : 120,
+        "x" : 100,
         "y" : 120,
         "phase" : 0,
         "comment" : " kiran comment"
@@ -446,8 +446,8 @@
       "component" : "Seed",
       "metadata" : {
         "label" : "raw_payments",
-        "x" : 120,
-        "y" : 320,
+        "x" : 100,
+        "y" : 340,
         "phase" : 0,
         "comment" : " kiran comment"
       },
