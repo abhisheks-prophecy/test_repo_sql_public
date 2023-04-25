@@ -6,4 +6,4 @@ packages:
   - "<0.8.0"
 - revision: "main"
   git: "https://github.com/abhisheks-prophecy/test_repo.git"
-  subdirectory: "/test/sql/uitesting/SQL_BaseGitDepProjectAllFinal"
+  subdirectory: "test/sql/uitesting/SQL_BaseGitDepProjectAllFinal"
